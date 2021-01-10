@@ -164,27 +164,28 @@ export default defineComponent({
 
 .answer {
   border: none;
-  height: 50px;
-  width: 200px;
+  height: $answer-height;
+  width: $answer-width;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
   outline: none;
-  font-size: 20px;
+  font-size: $answer-font-size;
   background: $eggwhite;
+  color: $ink;
 
   &::-webkit-input-placeholder {
     text-align: center;
-    font-size: 14px !important;
+    font-size: 16px !important;
     color: $ink;
   }
 }
 
 .indication {
-  width: 200px;
+  width: $answer-width;
   text-align: center;
   position: absolute;
-  top: calc(50% + 50px);
+  top: calc(50% + #{$answer-height} / 2 + 20px);
   font-size: 20px;
   font-weight: bold;
 }
