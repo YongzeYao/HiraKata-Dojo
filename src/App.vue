@@ -15,12 +15,15 @@
       />
       <div ref="indicator" class="indication">{{ indication }}</div>
     </div>
+    <ContactButtons class="contact" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
+
 import { hiragana, katakana, pronunciations } from './characters';
+import ContactButtons from './components/ContactButtons.vue';
 
 function getRandomIndex() {
   return Math.floor(Math.random() * hiragana.length);
@@ -37,6 +40,7 @@ function getRandomCharacter(index: number): string {
 
 export default defineComponent({
   name: 'App',
+  components: { ContactButtons },
   setup() {
     const char = ref<string>('');
     const lastCharacter = ref<string>('');
@@ -100,11 +104,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-$eggwhite: #fff5c4;
-$green: rgb(73, 230, 73);
-$red: rgb(231, 23, 23);
-$character-width: 300px;
-$character-height: 300px;
+@import './scss/variables.scss';
 
 @mixin flex-center {
   display: flex;
@@ -176,7 +176,7 @@ $character-height: 300px;
   &::-webkit-input-placeholder {
     text-align: center;
     font-size: 14px !important;
-    color: #2c3e50;
+    color: $ink;
   }
 }
 
@@ -195,5 +195,12 @@ $character-height: 300px;
 
 .wrong {
   color: $red;
+}
+
+.contact {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 15px;
 }
 </style>
