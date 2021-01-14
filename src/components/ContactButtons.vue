@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <a href="">
+    <a target="_blank" href="https://github.com/YongzeYao/HiraKata-Dojo">
       <font-awesome-icon :icon="['fab', 'github']" size="3x" />
     </a>
     <a target="_blank" href="https://www.linkedin.com/in/yongze-yao-95480b132/">
